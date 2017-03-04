@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zyh.android.withthenotes.HomeActivity">
+    <item
+        android:id="@+id/item01"
+        android:title="按年查看" />
+
+    <item
+        android:id="@+id/item02"
+        android:title="当年按月查看" />
+
+    <item
+        android:id="@+id/item03"
+        android:title="当年所有数据" />
+</menu>

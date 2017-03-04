@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/title_layout"/>
+
+    <LinearLayout style="@style/TextInputLayout">
+
+        <TextView
+            style="@style/TextInputLayout.Text"
+            android:text="@string/TitleText"
+            />
+
+        <EditText
+            android:id="@+id/cost_title"
+            style="@style/TextInputLayout.Edit"
+            android:hint="10个字符以内"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/TextInputLayout">
+
+        <TextView
+            style="@style/TextInputLayout.Text"
+            android:text="@string/MoneyText"
+            />
+
+        <EditText
+            android:id="@+id/cost_money"
+            style="@style/TextInputLayout.Edit"
+            android:hint="单位是元，精确到分"
+            android:inputType="numberDecimal"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/TextInputLayout">
+
+        <TextView
+            style="@style/TextInputLayout.Text"
+            android:text="@string/Desc"
+            />
+
+        <EditText
+            android:id="@+id/cost_desc"
+            style="@style/TextInputLayout.Edit"
+            android:minLines="3"
+            android:gravity="left|top"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/TextInputLayout">
+
+        <TextView
+            style="@style/TextInputLayout.Text"
+            android:text="@string/Date"
+            />
+
+        <TextView
+            android:id="@+id/cost_date"
+            style="@style/TextInputLayout.Edit"
+            android:drawableRight="@mipmap/icon_date_yellow"
+            />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/submite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:text="@string/Submit"
+        android:minWidth="150dip"
+        android:onClick="submitClick"
+        android:layout_gravity="center_horizontal"
+        />
+
+</LinearLayout>

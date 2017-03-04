@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zyh.android.withthenotes.HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:minHeight="54dp"
+        android:gravity="center_vertical"
+        android:background="@color/blue_iphone"
+        >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="@string/Title"
+            android:drawableLeft="@mipmap/abc_icon"
+            android:drawableStart="@mipmap/abc_icon"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dip"
+            android:paddingStart="10dip"
+            style="?attr/titleTextAppearance"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/costHintText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/CostHintText"
+        android:layout_below="@id/titleLayout"
+        android:gravity="center"
+        android:padding="5dip"
+        android:layout_marginTop="20dip"
+        />
+
+    <RelativeLayout
+        android:id="@+id/costLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:background="@drawable/abc_cost_bg"
+        android:layout_below="@id/costHintText"
+        >
+
+        <TextView
+            android:id="@+id/costText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            />
+
+        <ImageButton
+            android:id="@+id/deleteCostView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:src="@mipmap/abc_button_delete_normal"
+            android:background="@drawable/abc_deletebtn_selector"
+            android:contentDescription="@string/app_name"
+            android:onClick="deleteViewClick"
+            />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/queryDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/costLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dip"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:text="@string/SeleteDetails"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:minWidth="150dip"
+        android:onClick="queryDetailsClick"
+        />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dip"
+        android:src="@mipmap/abc_new"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue_iphone"
+    android:minHeight="54dip"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/back"
+        style="@style/BackButton" android:paddingLeft="10dip"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        />
+
+    <ImageView
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dip"
+        android:src="@mipmap/nav_budget"
+        android:background="@drawable/abc_button_back"
+        android:minHeight="54dip"
+        android:padding="5dip"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>
