@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.weylen.propertyanimationdemo.MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用ValueAnimator"
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用ObjectAnimator"
+        android:onClick="useObjectAnimator"
+        />
+
+    <com.weylen.propertyanimationdemo.Cycle
+        android:id="@+id/cycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

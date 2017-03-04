@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.weylen.mediarecorderdemo.MainActivity">
+
+    <Button
+        android:id="@+id/recorderButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="按住开始录音"
+        android:onClick="recorderButtonClick"
+        android:layout_alignParentBottom="true"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/recorderButton">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

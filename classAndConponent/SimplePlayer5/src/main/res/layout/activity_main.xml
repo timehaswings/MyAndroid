@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.administrator.simpleplayer.MainActivity">
+
+    <RadioGroup
+        android:id="@+id/titleGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton android:id="@+id/title_nav_singemusic"
+            style="@style/Title_Radio_Button"
+            android:text="单曲"
+            android:checked="true"
+
+            />
+
+        <RadioButton android:id="@+id/title_nav_artist"
+            style="@style/Title_Radio_Button"
+            android:text="歌手"
+            />
+
+        <RadioButton android:id="@+id/title_nav_album"
+            style="@style/Title_Radio_Button"
+            android:text="专辑"
+            />
+
+        <RadioButton android:id="@+id/title_nav_dir"
+            style="@style/Title_Radio_Button"
+            android:text="文件夹"
+            />
+
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:background="@color/lighter_white"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    </LinearLayout>
+
+</LinearLayout>

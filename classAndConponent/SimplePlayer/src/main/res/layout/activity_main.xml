@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.administrator.simpleplayer.MainActivity">
+
+    <RadioGroup
+        android:id="@+id/titleGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton android:id="@+id/title_nav_singemusic"
+            style="@style/Title_Radio_Button"
+            android:text="单曲"
+            android:checked="true"
+
+            />
+
+        <RadioButton android:id="@+id/title_nav_artist"
+            style="@style/Title_Radio_Button"
+            android:text="歌手"
+            />
+
+        <RadioButton android:id="@+id/title_nav_album"
+            style="@style/Title_Radio_Button"
+            android:text="专辑"
+            />
+
+        <RadioButton android:id="@+id/title_nav_dir"
+            style="@style/Title_Radio_Button"
+            android:text="文件夹"
+            />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/tab_slt"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:src="@color/holo_red"
+        android:scaleType="fitXY"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/content_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.0"
+        android:background="@color/lighter_white"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:id="@+id/playController"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:background="@drawable/title_group_click"
+            >
+            
+            <ImageView
+                android:id="@+id/playAlbum"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_margin="3dp"
+                />
+            
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/playTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/playTitleColor"
+                    />
+
+                <TextView
+                    android:id="@+id/playArtist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/darker_gray"
+                    android:layout_marginTop="2dip"
+                    />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/playPauseBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/play_pause_selector"
+                android:background="@drawable/title_group_click"
+                />
+
+            <ImageView
+                android:id="@+id/playNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/title_group_click"
+                android:src="@mipmap/playbar_btn_next"
+
+                />
+        
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/playProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignBottom="@id/playController"
+            android:progressDrawable="@drawable/progress_drawable"
+            android:indeterminate="false"
+            android:indeterminateOnly="false"
+            />
+    </RelativeLayout>
+
+</LinearLayout>
