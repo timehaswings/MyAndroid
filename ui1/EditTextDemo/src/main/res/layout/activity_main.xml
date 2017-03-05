@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="thinkmore.com.edittextdemo.MainActivity">
+
+
+    <!-- android:hint="@string/app_name" 提示文本 -->
+    <!-- android:textColorHint="" 提示文本的颜色 -->
+    <!-- android:inputType="date" 输入类型 2015-12-20 -->
+    <!-- textPassword 密码类型 -->
+    <!-- number 数字类型 numberDecimal 小数类型 numberSigned 带符号的数字 -->
+    <!-- textMultiLine 多行显示 -->
+    <!-- android:digits="abc123" 限定输入框只能输入某些字符-->
+    <!-- android:cursorVisible="" 设置光标的可见度-->
+    <!-- android:imeOptions="" 控制软键盘上面的回车键的样式-->
+    <!-- actionDone 完成 actionSend 发送 actionSearch 搜索-->
+    <!-- inputType的textMultiLine不能和imeOptions同时设置 -->
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/app_name"
+        android:textColorHint="@android:color/holo_green_light"
+        android:inputType="text"
+        android:cursorVisible="true"
+        android:textColor="@android:color/holo_orange_light"
+        android:imeOptions="actionNext"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/app_name"
+        android:textColorHint="@android:color/holo_green_light"
+        android:inputType="text"
+        android:cursorVisible="true"
+        android:textColor="@android:color/holo_orange_light"
+        android:imeOptions="actionGo"
+        />
+
+</LinearLayout>

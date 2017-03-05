@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:scrollbars="none">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb01"
+                style="@style/Navigation_RB"
+                android:text="赛事直播"
+                android:checked="true"
+                />
+
+            <RadioButton
+                android:id="@+id/rb02"
+                style="@style/Navigation_RB"
+                android:text="达人直播"
+                />
+
+            <RadioButton
+                android:id="@+id/rb03"
+                style="@style/Navigation_RB"
+                android:text="投资观点"
+                />
+
+            <RadioButton
+                android:id="@+id/rb04"
+                style="@style/Navigation_RB"
+                android:text="赛事动态"
+                />
+
+            <RadioButton
+                android:id="@+id/rb05"
+                style="@style/Navigation_RB"
+                android:text="赛事点评"
+                />
+
+            <RadioButton
+                android:id="@+id/rb06"
+                style="@style/Navigation_RB"
+                android:text="精英达人"
+                />
+
+        </RadioGroup>
+
+    </HorizontalScrollView>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+</LinearLayout>

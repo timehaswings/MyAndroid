@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.weylen.autocompleteviewdemo.MainActivity">
+
+    <!-- android:completionThreshold="" 定义自动完成的字符个数 >=1 -->
+    <AutoCompleteTextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:completionThreshold="1"
+        />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:completionThreshold="1"
+        />
+</LinearLayout>
