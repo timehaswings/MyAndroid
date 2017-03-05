@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ListView_SingleChoice</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="TextHint">请选择你喜欢的颜色</string>
+
+</resources>

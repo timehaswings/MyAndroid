@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" android:paddingTop="5dp" android:paddingBottom="5dp">
+
+    <TextView android:id="@+id/text1" style="@style/ItemText"
+        android:text="@string/Player" android:minWidth="40dp"/>
+    
+    <TextView android:id="@+id/text2" style="@style/ItemText"
+        android:text="@string/Events" android:layout_width="100dp"
+        android:focusable="true" android:focusableInTouchMode="true"
+        android:singleLine="true" android:ellipsize="marquee"
+        android:freezesText="true" android:marqueeRepeatLimit="marquee_forever"
+        />
+    
+    <TextView android:id="@+id/text3" style="@style/ItemText"
+        android:text="@string/Code"/>
+    
+    <TextView android:id="@+id/text4" style="@style/ItemText"
+        android:text="@string/Name"/>
+    
+    <TextView android:id="@+id/text5" style="@style/ItemText"
+        android:text="@string/Type"/>
+    
+    <TextView android:id="@+id/text6" style="@style/ItemText"
+        android:text="@string/Count"/>
+
+</LinearLayout>

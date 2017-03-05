@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全部清空"
+        android:layout_gravity="right"
+        />
+
+    <!-- ListView里面几个常用属性 -->
+    <!-- 1. android:divider="" 分割线 -->
+    <!-- 2. android:dividerHeight="" 分割线的高度 -->
+    <!-- 3. android:listSelector="@android:color/transparent" 默认的列表选择器 -->
+    <!-- 4. android:cacheColorHint="" 列表在滚动的一个缓存颜色
+            设置成透明的，避免在滚动时出现黑色的背景
+    -->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#f00"
+        android:dividerHeight="0.5dp"
+        android:cacheColorHint="@android:color/transparent"
+        />
+</LinearLayout>

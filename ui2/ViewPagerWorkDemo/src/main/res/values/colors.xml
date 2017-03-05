@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--红色值：#ce2123  黑色值：#303030  灰色值：#7c7c7c  白色值：#ffffff
+        赛事直播-精英达人那里的背景颜色是：#f7f7f7
+        1像素的背景颜色是：#e1e1e1-->
+
+    <color name="redColor">#ce2123</color>
+    <color name="blackColor">#303030</color>
+    <color name="grayColor">#7c7c7c</color>
+    <color name="white">#ffffff</color>
+    <color name="divider">#e1e1e1</color>
+    <color name="grayBackground">#f7f7f7</color>
+</resources>

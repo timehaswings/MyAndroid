@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:padding="5dp">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:text="红色"
+        android:textSize="16sp"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="12sp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        />
+</LinearLayout>

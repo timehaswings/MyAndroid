@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <!-- showAsAction菜单显示的方式-->
+    <item
+        android:id="@+id/tools"
+        android:title="Tools"
+        android:icon="@android:drawable/ic_menu_search"
+        android:orderInCategory="0"
+        app:showAsAction="ifRoom"
+        />
+
+    <group android:checkableBehavior="all"
+        >
+
+        <item
+            android:id="@+id/build"
+            android:title="Build"
+            android:orderInCategory="0"
+            android:checked="true"
+            >
+
+            <menu>
+                <item
+                    android:id="@+id/subMenu01"
+                    android:title="subMenu01"
+                    android:orderInCategory="0"
+                    android:checkable="false"
+                    >
+
+                    <menu>
+                        <item
+                            android:id="@+id/subMenu0101"
+                            android:title="subMenu0101"
+                            android:orderInCategory="0"
+                            android:checkable="false"
+                            >
+
+                            <menu>
+                                <item
+                                    android:id="@+id/subMenu010101"
+                                    android:title="subMenu010101"
+                                    android:orderInCategory="0"
+                                    android:checkable="false"
+                                    />
+
+                                <item
+                                    android:id="@+id/subMenu010102"
+                                    android:title="subMenu010102"
+                                    android:orderInCategory="0"
+                                    android:checkable="false"
+                                    />
+                            </menu>
+
+                        </item>
+
+                        <item
+                            android:id="@+id/subMenu0102"
+                            android:title="subMenu0102"
+                            android:orderInCategory="0"
+                            android:checkable="false"
+                            />
+                    </menu>
+
+                </item>
+
+                <item
+                    android:id="@+id/subMenu02"
+                    android:title="subMenu02"
+                    android:orderInCategory="0"
+                    android:checkable="false"
+                    />
+            </menu>
+
+        </item>
+
+        <item
+            android:id="@+id/Refactor"
+            android:title="Refactor"
+            android:orderInCategory="0"
+            android:checkable="false"
+            />
+
+        <item
+            android:id="@+id/Analyze"
+            android:title="Analyze"
+            android:orderInCategory="0"
+            />
+    </group>
+
+</menu>

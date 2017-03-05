@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ListViewChoiceMode</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ButtonClick">加入购物车</string>
+    <string name="ButtonText">加入购物车</string>
+
+</resources>

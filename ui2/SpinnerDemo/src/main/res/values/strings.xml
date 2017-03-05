@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SpinnerDemo</string>
+    <string name="prompt">选择颜色</string>
+</resources>

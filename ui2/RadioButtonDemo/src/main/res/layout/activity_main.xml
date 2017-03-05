@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择您的性别：" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <!-- android:button="" 属性就是控制RadioButton前面的图标-->
+        <!-- android:gravity="right" 只能控制文本所在的位置-->
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"
+            android:textColor="@color/radio_text"
+            android:checked="false"
+            android:textSize="14sp"
+            android:button="@color/transparent"
+            android:drawableRight="@android:drawable/btn_radio"
+            android:layout_weight="1.0"
+            android:gravity="right|center_vertical"
+            />
+
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女"
+            android:textColor="@color/radio_text"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1.0"
+            />
+
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/layout1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:paddingTop="5dp"
+            android:background="@android:color/holo_orange_dark"
+            >
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@android:drawable/ic_media_play"
+                android:text="资料"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:drawablePadding="3dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/red_circle"
+                android:layout_toRightOf="@id/text1"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:paddingTop="5dp"
+            android:background="@android:color/holo_blue_dark"
+            >
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@android:drawable/ic_media_play"
+                android:text="资料"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:drawablePadding="3dp"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:paddingTop="5dp"
+            android:background="@android:color/holo_blue_dark"
+            >
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@android:drawable/ic_media_play"
+                android:text="资料"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:drawablePadding="3dp"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

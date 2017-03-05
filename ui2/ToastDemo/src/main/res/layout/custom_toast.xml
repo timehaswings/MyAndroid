@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/black_corner"
+    android:padding="10dp"
+    android:minWidth="200dp"
+    >
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/emoji_85"
+        android:textAllCaps="false"
+        android:text="恭喜你晋级了"
+        android:gravity="center"
+        android:drawablePadding="5dp"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_horizontal"
+        />
+
+</LinearLayout>
