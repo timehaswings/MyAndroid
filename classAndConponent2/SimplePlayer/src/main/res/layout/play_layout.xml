@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darker_gray">
+
+    <include
+        layout="@layout/title_layout"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/play_topbar_line"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/playLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="68dip"
+            android:layout_centerHorizontal="true"
+            >
+
+            <ImageView
+                android:id="@+id/playAlbumImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/recommend_icn_special"
+                android:contentDescription="@string/app_name"
+                android:layout_centerInParent="true"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/play_disc"
+                android:contentDescription="@string/app_name"
+                android:background="@mipmap/play_disc_halo"
+                />
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/playNeedle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/play_needle"
+            android:layout_marginTop="-10dip"
+            />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dip"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/playTitleColor"
+            android:id="@+id/playTime"
+            android:textSize="12sp"
+            android:text="00:00"
+            />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/playTitleColor"
+            android:id="@+id/allTime"
+            android:textSize="12sp"
+            android:text="00:00"
+            />
+
+    </LinearLayout>
+    
+    <CheckBox
+        android:id="@+id/playPauseBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:button="@drawable/play_pause_btn"
+        android:layout_marginTop="20dip"
+        />
+
+
+</LinearLayout>

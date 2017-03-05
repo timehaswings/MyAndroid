@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:gravity="center_vertical"
+    android:background="@drawable/list_icn_more_click"
+    >
+
+    <ImageView
+        android:id="@+id/playIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/song_play_icon"
+        android:contentDescription="@string/app_name"
+        android:layout_marginLeft="5dip"
+        android:visibility="gone"
+        />
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1.0"
+        android:layout_marginLeft="3dip"
+        android:padding="8dip"
+        >
+
+        <TextView
+            android:id="@+id/playTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/playTitleColor"
+            />
+
+        <TextView
+            android:id="@+id/playInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/darker_gray"
+            android:layout_marginTop="2dip"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/playMore"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@mipmap/list_icn_more"
+        android:contentDescription="@string/app_name"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:background="@drawable/list_icn_more_click"
+        />
+
+</LinearLayout>
