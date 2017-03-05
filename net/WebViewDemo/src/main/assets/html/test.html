@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+        <TITLE>test.html</TITLE>
+        <meta charset="utf-8"/>
+
+        <script language="JavaScript">
+
+            function test(){
+                alert("Hello 你好吗");
+            }
+
+            function count(f1,f2){
+                // dmeo指的是在webview里面添加的js接口的名字  count 调用的方法
+                window.demo.count(f1, f2);
+            }
+
+            function result(result){
+                alert("计算结果："+result);
+            }
+
+        </script>
+    </HEAD>
+
+    <BODY>
+
+        <h2>Hello, This is a html page!</h2>
+
+        <button onclick="test()">Click Me</button><br/>
+        <a href="meinv.jpg" onclick="">www.avi.com</a><br/>
+        <a href="#" onclick="count(10,20)">与android进行交互</a>
+        <a href="xxx.exe">下载</a>
+
+    </BODY>
+</HTML>
