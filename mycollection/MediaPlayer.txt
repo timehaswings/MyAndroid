@@ -1,0 +1,615 @@
+项目中正好使用这个类，下面让我们看一下MediaPlayer类的详细介绍。
+
+一、类结构：
+java.lang.Object
+
+   ?
+
+Android.media.MediaPlayer
+
+ 
+
+二、构造方法和公有方法
+构造方法：
+
+Public Constructors
+
+ 	
+MediaPlayer()
+
+默认构造方法。
+
+ 
+
+公有方法：
+
+Public Methods
+
+static MediaPlayer
+
+create(Context context, Uri uri, SurfaceHolder holder)
+
+指定从资源ID对应的资源文件中来装载音乐文件，同时指定了SurfaceHolder对象并返回MediaPlyaer对象。
+
+static MediaPlayer
+
+create(Context context, int resid)
+
+指定从资源ID对应的资源文件中来装载音乐文件，并返回新创建的MediaPlyaer对象。
+
+static MediaPlayer
+
+create(Context context, Uri uri)
+
+从指定Uri装在音频文件，并返回新创建的MediaPlayer对象。
+
+int
+
+getCurrentPosition()
+
+获取当前播放的位置。
+
+int
+
+getDuration()
+
+获取音频的时长。
+
+int
+
+getVideoHeight()
+
+获取视频的高度。
+
+int
+
+getVideoWidth()
+
+获取视频的宽度。
+
+boolean
+
+isLooping()
+
+判断MediaPlayer是否正在循环播放。
+
+boolean
+
+isPlaying()
+
+判断MediaPlayer是否正在播放。
+
+void
+
+pause()
+
+暂停播放。
+
+void
+
+prepare()
+
+准备播放（装载音频），调用此方法会使MediaPlayer进入Prepared状态。
+
+void
+
+prepareAsync()
+
+准备播放异步音频。
+
+void
+
+release()
+
+释放媒体资源。
+
+void
+
+reset()
+
+重置MediaPlayer进入未初始化状态。
+
+void
+
+seekTo(int msec)
+
+寻找指定的时间位置。
+
+void
+
+setAudioStreamType(int streamtype)
+
+设置音频流的类型。
+
+void
+
+setDataSource(String path)
+
+指定装载path路径所代表的文件。
+
+void
+
+setDataSource(Context context, Uri uri, Map<String, String headers)
+
+指定装载uri所代表的文件。
+
+void
+
+setDataSource(Context context, Uri uri)
+
+指定装载uri所代表的文件。
+
+void
+
+setDataSource(FileDescriptor fd, long offset, long length)
+
+指定装载fd所代表的文件中从offset开始长度为length的文件内容。
+
+void
+
+setDataSource(FileDescriptor fd)
+
+指定装载fd所代表的文件。
+
+void
+
+setDisplay(SurfaceHolder sh)
+
+设置显示方式。
+
+void
+
+setLooping(boolean looping)
+
+设置是否循环播放。
+
+void
+
+setNextMediaPlayer(MediaPlayer next)
+
+设置当前流媒体播放完毕,下一个播放的MediaPlayer。
+
+void
+
+setOnBufferingUpdateListener(MediaPlayer.OnBufferingUpdateListener listener)
+
+注册一个回调函数,在网络视频流缓冲变化时调用。
+
+void
+
+setOnCompletionListener(MediaPlayer.OnCompletionListener listener)
+
+为Media Player的播放完成事件绑定事件监听器。
+
+void
+
+setOnErrorListener(MediaPlayer.OnErrorListener listener)
+
+为MediaPlayer的播放错误事件绑定事件监听器。
+
+void
+
+setOnPreparedListener(MediaPlayer.OnPreparedListener listener)
+
+当MediaPlayer调用prepare()方法时触发该监听器。
+
+void
+
+setOnSeekCompleteListener(MediaPlayer.OnSeekCompleteListener listener)
+
+当MediaPlayer调用seek()方法时触发该监听器。
+
+void
+
+setOnVideoSizeChangedListener(MediaPlayer.OnVideoSizeChangedListener listener)
+
+注册一个用于监听视频大小改变的监听器。
+
+void
+
+setScreenOnWhilePlaying(boolean screenOn)
+
+置是否使用SurfaceHolder来显示。
+
+void
+
+setSurface(Surface surface)
+
+设置Surface。
+
+void
+
+setVideoScalingMode(int mode)
+
+设置视频缩放的模式。
+
+void
+
+setVolume(float leftVolume, float rightVolume)
+
+设置播放器的音量。
+
+void
+
+setWakeMode(Context context, int mode)
+
+为MediaPlayer设置低级电源管理行为。.
+
+void
+
+start()
+
+开始或恢复播放。
+
+void
+
+stop()
+
+停止播放。
+
+ 
+
+三、常用方法分析：
+1.使用进度条：
+进度条SeekBar可以用来显示播放进度，用户也可以利用SeekBar的滑块来控制音乐的播放。
+
+SeekBar需要使用的一些方法：
+
+setProgress（int value）：设置滑块的位置方法为。
+
+setMax(int value)：设置进度条的最大长度。
+
+setOnSeekBarChangeListener(OnSeekBarChangeListener l)：设置SeekBar的进度改变事件。
+
+MusicPlayer需要使用的一些方法:
+
+getDuration()：获得音乐长度为。
+
+getCurrentPosition()：获得现在播放的位置。
+
+seekTo(int msec)：调用seekTo()方法可以调整播放的位置。
+
+seekTo(int)方法是异步执行的，所以它可以马上返回，但是实际的定位播放操作可能需要一段时间才能完成，尤其是播放流形式的音频/视频。当实际的定位播放操作完成之后，内部的播放引擎会调用客户端程序员提供的OnSeekComplete.onSeekComplete()回调方法。可以通过setOnSeekCompleteListener(OnSeekCompleteListener)方法注册。
+
+seekTo(int)方法也可以在其它状态下调用，比如Prepared，Paused和PlaybackCompleted状态。此外，目前的播放位置，实际可以调用getCurrentPosition()方法得到，它可以帮助如音乐播放器的应用程序不断更新播放进度。
+
+创建并使用进度条的步骤：
+
+第一步：创建一个进度条
+
+//进度条
+
+static SeekBarskbMusic;
+
+skbMusic=(SeekBar)findViewById(R.id.skbMusic);
+
+ 
+
+第二步：为进度条的改变事件注册并添加监听器
+
+skbMusic.setOnSeekBarChangeListener(sChangeListener);
+
+/**
+
+  * SeekBar进度改变事件
+
+  */
+
+OnSeekBarChangeListenersChangeListener=new OnSeekBarChangeListener() {                 
+
+        @Override
+
+        public void onStopTrackingTouch(SeekBar seekBar) {
+
+                  // TODO Auto-generated method stub
+
+                  //当拖动停止后，控制mediaPlayer播放指定位置的音乐
+
+                  MusicService.mediaPlayer.seekTo(seekBar.getProgress());
+
+       MusicService.isChanging=false;  
+
+        }       
+
+        @Override
+
+        public void onStartTrackingTouch(SeekBar seekBar) {
+
+                  // TODO Auto-generated method stub
+
+                  MusicService.isChanging=true;
+
+        }       
+
+        @Override
+
+        public void onProgressChanged(SeekBar seekBar, int progress,
+
+                           boolean fromUser) {
+
+                  // TODO Auto-generated method stub           
+
+        }
+
+};
+
+ 
+
+第三步：设置进度条的最大长度：
+
+//getDuration()方法要在prepare()方法之后，否则会出现Attempt to call getDuration without a valid mediaplayer异常
+
+MusicBox.skbMusic.setMax(mediaPlayer.getDuration());//设置SeekBar的长度
+
+ 
+
+第四步：更新进度条
+
+//----------定时器记录播放进度---------//
+
+mTimer =new Timer();
+
+mTimerTask =new TimerTask() {
+
+    @Override
+
+    publicvoid run() {
+
+        isTimerRunning=true;
+
+        if(isChanging==true)//当用户正在拖动进度进度条时不处理进度条的的进度
+
+           return; 
+
+        MusicBox.skbMusic.setProgress(mediaPlayer.getCurrentPosition());
+
+    }
+
+};
+
+//每隔10毫秒检测一下播放进度
+
+mTimer.schedule(mTimerTask, 0, 10);
+
+ 
+
+2.装载音频文件：
+为了让MediaPlayer来装载指定音频文件，MediaPlayer提供了如下简单的静态方法。
+
+static MediaPlayer create(Context context, Uri uri):从指定Uri来装载音频文件，并返回新创建的MediaPlayer对象。
+
+static MediaPlayer create(Context context, int resid):从 resid资源 ID对应的资源文件中装载音频文件，并返回新创建的MediaPlayer对象。
+
+提示：上而这两个方法用起来非常方便，但这两个方法每次都会返回新创建的MediaPlayer对象，如来程序需要使用MediaPlayer循环播放多个音频文件，使用MediaPlayer的静态create方法就不太合适了，此时可通过MediaPlayer的setDataSource()方法来装载指定的音频文件。MediaPlayer提供了如下方法来指定装载相应的音频文件。
+
+setDataSource(String path):指定装载path路径所代表的文件。
+
+setDataSource(FileDescriptor fd, long offset,long length)：指定装载fd所代表的文件中从offset开始长度为length的文件内容。
+
+setDataSource(FileDescriptor fd):指定装载fd所代表的文件。
+
+setDataSource(Context context, Uri uri):指定装载uri所代表的文件。
+
+提示：执行上面所示的setDataSource()方法之后，MediaPlayer并未真正去装载那些音频文件，还需要调用MediaPlayer的prepare()方法去准备音频，所谓“准备”，就是让MediaPlayer真正去装载音频文件。
+
+使用已有的MediaPlayer对象装载“一首”歌曲的代码模板为：
+
+mPlayer.reset();
+
+//装战下一竹歌曲
+
+mPlayer.setDataSource(M/mnt/sdcard/next.mp3);
+
+//准备声音 mPlayer.prepare();
+
+"播放
+
+mPlayer.start();
+
+}
+
+catch (IOException e)
+
+e.printStackTrace();
+
+}
+
+ 
+
+3.与MediaPlayer有关的事件监听器：
+MediaPlayer提供了一些绑定事件监听器的方法，用于监听MediaPlayer播放过程中所发生的特定事件，绑定事件监听器的方法如下。
+
+setOnCompletionListener(MediaPlayer.OnCompletionListener listener)：为 Media Player的播放完成事件绑定事件监听器。
+
+setOnErrorListener(MediaPlayer.OnErrorListener listener)：为MediaPlayer的播放错误事件绑定事件监听器。
+
+setOnPreparedListener(MediaPlayer.OnPreparedListener listener)：当 MediaPlayer调用prepare()方法时触发该监听器。
+
+setOnSeekCompleteListener(MediaPlayer.OnSeekCompleteListener listener)：当MediaPlayer调用seek()方法时触发该监听器。
+
+因此可以在创建一个MediaPlayer对象之后，通过为该MediaPlayer绑定监听器来监听相应的事件，例如如下代码：
+
+//为MediaPlayer的播放完成事件绑定事件监听器
+
+mPlayer.setOnErrorListener(new OnErrorListener() {         
+
+    @Override
+
+    publicboolean onError(MediaPlayer mp,int what,int extra) {       
+
+        // TODO Auto-generated method stub
+
+        //针对错误进行相应的处理
+
+//             ... ...
+
+    }
+
+});
+
+//为MediaPlayer的播放完成讲件绑定市件监听器
+
+mPlayer.setOnCompletionListener(new OnCompletionListener() {           
+
+    @Override
+
+    publicvoid onCompletion(MediaPlayer mp) {
+
+        // TODO Auto-generated method stub
+
+           current++;
+
+           prepareAndPlay(current);   
+
+        }
+
+   });
+
+ 
+
+四、MediaPlayer播放不同来源的音频文件：
+1.播放应用的资源文件
+播放应用的资源文件需要两步即：
+
+1) 调用MediaPlayer的create(Context context，int resid)方法加指定资源文件。
+
+2) 调用 MediaPlayer的 start()、pause()、stop()等方法控制播放即可。
+
+例如如下代码:
+
+MediaPlayer mPlayer=new MediaPlayer();
+
+mPlayer.create(this, R.raw.music);
+
+ 
+
+2.  播放应用的原始资源文件
+播放应用的资源文件按如下步骤执行。
+
+1) 调用 Context的 getAssets()方法获取应用的 AssetManager。
+
+2) 调用AssetManager对象的openFd(String name)方法打开指定的原生资源，该方法返回一个AssetFileDescriptor对象。
+
+3) 调用 AssetFileDescriptor的 getFileDescriptor()、getStartOffset()和 getLength()方法来获取音频文件的FileDescriptor、开始位置、长度等。
+
+4) 创建MediaPlayer对象(或利用已有的MediaPlayer对象)，并调用MediaPlayer对象的setDataSource(FileDescriptor fd，long offset, long length)方法来装载音频资源。
+
+5) 调用MediaPlayer对象的prepare()方法准备音频。
+
+6) 调用MediaPlayer的start()、pause()、stop()等方法控制播放即可。
+
+例如如下代码片段：
+
+//获取assets目录下指定文件的AssetFileDescriptor对象
+
+AssetFileDescriptor assetFileDescriptor=assetManager.openFd(musics[current]);
+
+mediaPlayer.reset();//初始化mediaPlayer对象
+
+mediaPlayer.setDataSource(assetFileDescriptor.getFileDescriptor(),     assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+
+//准备播放音乐
+
+mediaPlayer.prepare();
+
+//播放音乐
+
+mediaPlayer.start();
+
+3.  播放外部存储器上音频文件
+播放外部存储器上音频文件按如下步骤执行。
+
+1) 创建MediaPlayer对象(或利用已有的MediaPlayer对象)，并调用MediaPlayer对象的setDateSource(String path)方法装载指定的音频文件。  
+
+2) 调用MediaPlayer对象的prepare()方法准备音频。    
+
+3) 调用MediaPlayer的start()、pause()、stop()等方法控制播放即可。
+
+例如如下代码：
+
+//加载SD卡上的指定资源音频文件
+
+mPlayer.setDataSource("/mnt/You Are The One.mp3");
+
+mPlayer.prepare();//准备因音频
+
+mPlayer.start();//播放音频
+
+4.播放来自网络的音频文件
+播放来自网络的音频文件?两种方式：1.直接使用MediaPlayer的静态create(Context context, Uri uri)方法；2.调用 MediaPlayer的setDataSource(Context context,Uri uri)装载指定Uri对应的音频文件。
+
+以第二种方式播放来自网络的音频文件的步骤如下。
+
+1. 根据网络上的音频文件所在的位置创建Uri对象。
+
+2. 创建MediaPlayer对象(或利用己有的MediaPlayer对象)，并调用MediaPlayer对象的 setDateSource(Context context,Uri uri)方法装载Uri对应的音频文件。
+
+3. 调用MediaPlayer对象的prepare()方法准备音频。
+
+4. 调用MediaPlayer的start()、pause()、stop()等方法控制播放即可。
+
+例如如下代码片段：
+
+Uri uri = Uri.parse("http://play.baidu.com/heihei.mp3");
+
+MediaPlayer mPlayer = new MediaPlayer();
+
+//使用MediaPlayer根据Uri来加载指定的声音文件
+
+mPlayer.setDataSource(this, uri);
+
+mPlayer.prepare();//准备因音频
+
+mPlayer.start();//播放音频
+
+MediaPlayer除了调用prepare()方法来准备声音之外，还以调用prepareAsync()来准备声音，prepareAsync()与普通prepare()方法的区别在于，prepareAsync()是异步的，它不会阻塞当前的UI线程。
+
+五、解析MdiaPlayer的状态图
+mediaplayer状态图
+上面这张状态转换图清晰的描述了MediaPlayer的各个状态，也列举了主要的方法的调用时序，每种方法只能在一些特定的状态下使用，如果使用时MediaPlayer的状态不正确则会引发IllegalStateException异常。
+
+Idle状态：当使用new()方法创建一个MediaPlayer对象或者调用了其reset()方法时，该MediaPlayer对象处于idle状态。在处于Idle状态时，调用getCurrentPosition(), getDuration(), getVideoHeight(),getVideoWidth(),setAudioStreamType(int), setLooping(boolean), setVolume(float, float), pause(), start(), stop(), seekTo(int), prepare()或者 prepareAsync()方法都会出现相应错误。这两种方法的一个重要差别就是：当一个MediaPlayer对象刚被构建的时候，内部的播放引擎和对象的状态都没有改变，在这个时候调用以上的那些方法，框架将无法回调客户端程序注册的OnErrorListener.onError()方法，所以不会进入Error状态；但若这个MediaPlayer对象调用了reset()方法之后，再调用以上的那些方法，内部的播放引擎就会回调客户端程序注册的OnErrorListener.onError()方法，这时MediaPlayer会进入Error状态。
+
+提示：使用new操作符创建的MediaPlayer对象处于Idle状态，而那些通过重载的create()便利方法创建的MediaPlayer对象却不是处于Idle状态。事实上，如果成功调用了重载的create()方法，那么这些对象已经是Prepare状态了。
+
+ 
+
+End状态：通过release()方法可以进入End状态，只要MediaPlayer对象不再被使用，就应当尽快将其通过release()方法释放掉，以释放相关的软硬件组件资源，这其中有些资源是只有一份的（相当于临界资源）。如果MediaPlayer对象进入了End状态，则不会再进入任何其他状态了。
+
+ 
+
+Initialized状态：这个状态比较简单，MediaPlayer调用setDataSource()方法就进入Initialized状态，表示此时要播放的文件已经设置好了。
+
+提示：若当此MediaPlayer处于其它的状态下，调用setDataSource()方法，会抛出IllegalStateException异常。
+
+ 
+
+Prepared状态：初始化完成之后还需要通过调用prepare()或prepareAsync()方法，这两个方法一个是同步的一个是异步的，只有进入Prepared状态，才表明MediaPlayer到目前为止都没有错误，可以进行文件播放。
+
+提示：在不合适的状态下调用prepare()和prepareAsync()方法会抛出IllegalStateException异常。当MediaPlayer对象处于Prepared状态的时候，可以调整音频/视频的属性，如音量，播放时是否一直亮屏，循环播放等。
+
+ 
+
+Preparing状态：这个状态比较好理解，主要是和prepareAsync()配合，如果异步准备完成，会触发OnPreparedListener.onPrepared()，进而进入Prepared状态。
+
+ 
+
+Started状态：显然，MediaPlayer一旦准备好，就可以调用start()方法，这样MediaPlayer就处于Started状态，这表明MediaPlayer正在播放文件过程中。可以使用isPlaying()测试MediaPlayer是否处于了Started状态。如果播放完毕，而又设置了循环播放，则MediaPlayer仍然会处于Started状态，类似的，如果在该状态下MediaPlayer调用了seekTo()或者start()方法均可以让MediaPlayer停留在Started状态。
+
+ 
+
+Paused状态：Started状态下MediaPlayer调用pause()方法可以暂停MediaPlayer，从而进入Paused状态，MediaPlayer暂停后再次调用start()则可以继续MediaPlayer的播放，转到Started状态，暂停状态时可以调用seekTo()方法，这是不会改变状态的。
+
+ 
+
+Stop状态：Started或者Paused状态下均可调用stop()停止MediaPlayer，而处于Stop状态的MediaPlayer要想重新播放，需要通过prepareAsync()和prepare()回到先前的Prepared状态重新开始才可以。
+
+ 
+
+PlaybackCompleted状态：文件正常播放完毕，而又没有设置循环播放的话就进入该状态，并会触发OnCompletionListener的onCompletion()方法。此时可以调用start()方法重新从头播放文件，也可以stop()停止MediaPlayer，或者也可以seekTo()来重新定位播放位置。
+
+ 
+
+Error状态：在一般情况下，由于种种原因一些播放控制操作可能会失败，如不支持的音频/视频格式，缺少隔行扫描的音频/视频，分辨率太高，流超时等原因，等等会触发会触发OnErrorListener.onError()事件，此时MediaPlayer会进入Error状态，及时捕捉并妥善处理这些错误是很重要的，可以帮助我们及时释放相关的软硬件资源，也可以改善用户体验。
+
+开发者可以通过setOnErrorListener(android.media.MediaPlayer.OnErrorListener设置监听器来监听MediaPlayer是否进入Error状态。如果MediaPlayer进入了Error状态，可以通过调用reset()来恢复，使得MediaPlayer重新返回到Idle状态

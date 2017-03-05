@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CircleLayout</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_world2">Hello World2</string>
+    <string name="hello_world3">Hello World3</string>
+    <string name="hello_world4">Hello World4</string>
+    <string name="testing">testing</string>
+
+</resources>
