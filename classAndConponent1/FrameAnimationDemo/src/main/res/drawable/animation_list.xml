@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <!-- 一个item表示一帧-->
+    <item android:drawable="@drawable/sample_0" android:duration="300"/>
+    <item android:drawable="@drawable/sample_1" android:duration="300"/>
+    <item android:drawable="@drawable/sample_2" android:duration="300"/>
+    <item android:drawable="@drawable/sample_3" android:duration="300"/>
+    <item android:drawable="@drawable/sample_4" android:duration="300"/>
+    <item android:drawable="@drawable/sample_5" android:duration="300"/>
+    <item android:drawable="@drawable/sample_6" android:duration="300"/>
+    <item android:drawable="@drawable/sample_7" android:duration="300"/>
+
+</animation-list>

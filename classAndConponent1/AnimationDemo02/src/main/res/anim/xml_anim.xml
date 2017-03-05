@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXDelta="-100%"
+    android:toXDelta="0"
+    android:fromYDelta="0"
+    android:toYDelta="0"
+    >
+
+    <!-- 值的写法：100 绝对值 100% 相对于自身 100%p 相对于父控件-->
+
+</translate>
