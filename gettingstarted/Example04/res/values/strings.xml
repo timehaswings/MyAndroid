@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Example04</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_three">ThreeActivity</string>
+    <string name="StartActivity">跳转页面</string>
+    <string name="CallPhoneBtn">打电话</string>
+
+</resources>

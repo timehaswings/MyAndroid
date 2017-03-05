@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:baselineAligned="false"
+    android:background="@android:color/holo_blue_light"
+     >
+
+    <!-- gravity layout_gravity-->
+    <!-- layout_gravity 布局重心 整个控件在整个布局的什么位置 -->
+    <!-- gravity 重心 控件的内容在控件的什么位置 gravity 要起作用：控件的内容与控件的大小不相等-->
+    <!-- android:baselineAligned="false" 线性布局里面的内容不以文本的底线对齐 -->
+    <!-- layout_weight 权重  比例 是和LinearLayout的方向有关，水平方向则划分x轴 垂直划分的y轴 -->
+    <!-- layout_weight首先需要考虑对应方向的宽度或者高度属性，所以当对应方向上的属性设置wrap_content，应该先满足内容更的大小 -->
+    <!-- 在去除自适应的内容大小之后，剩下的空白再按照比例的划分 -->
+    <!-- 如果想要以对应的比例作为控件的大小的话，则应该把对应的属性值设置为0dp -->
+    
+    <!-- layout_margin(外边距 控件与控件的距离，控件与边框的距离) padding(内边距 内容与边框的距离)-->
+    
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:text="@string/hello_world"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:padding="20dp"
+        android:layout_margin="20dp"
+        />
+    
+    <Button 
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world"
+        android:onClick="buttonClick"
+        />
+
+</LinearLayout>

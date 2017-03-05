@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:padding="10dip"
+    >
+    
+    <EditText android:id="@+id/account" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:padding="10dip"
+        android:inputType="text" android:hint="@string/AccountHint"
+        />
+    
+    <EditText android:id="@+id/password" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:padding="10dip"
+        android:inputType="textPassword" android:hint="@string/PwdHint"
+        />
+    
+    <EditText android:id="@+id/birthday" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:padding="10dip"
+        android:inputType="text" android:hint="@string/BirthdayHint"
+        />
+    
+    <EditText android:id="@+id/address" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:padding="10dip"
+        android:inputType="text" android:hint="@string/AddressHint"
+        />
+	
+    <Button android:id="@+id/registerButton" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="@string/RegisterButtonName"
+        android:onClick="registerClick" android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        />
+    
+</LinearLayout>

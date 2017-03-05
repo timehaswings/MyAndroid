@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">StartActivity4Result</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Register">注册</string>
+    <string name="ResultHint">请输入结果</string>
+    <string name="Sure">确定</string>
+    <string name="Label_Result">结算结果</string>
+
+</resources>

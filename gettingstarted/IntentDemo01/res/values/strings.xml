@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IntentDemo01</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ShowIMG">显示图片</string>
+    <string name="title_activity_img">ImgActivity</string>
+    <string name="ButtonName">隐式跳转自定义的页面</string>
+
+</resources>

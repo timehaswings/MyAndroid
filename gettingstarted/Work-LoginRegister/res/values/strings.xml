@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Work-LoginRegister</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="AccountHint">请输入账号</string>
+    <string name="PwdHint">请输入密码</string>
+    <string name="BirthdayHint">您的生日</string>
+    <string name="AddressHint">您的地址</string>
+    <string name="RegisterButtonName">注册</string>
+    <string name="LoginText">登录</string>
+    <string name="LoginSuccessText">登录成功</string>
+
+</resources>

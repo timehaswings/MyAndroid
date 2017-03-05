@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Example03</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ButtonName">修改文本的内容和颜色</string>
+
+</resources>

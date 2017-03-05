@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zyh.android.helloworld2222"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:installLocation="auto"
+     >
+    
+    <!-- xmlns:android="http://schemas.android.com/apk/res/android" 表示XML的标签的命名空间 -->
+    <!-- 命名空间的作用是为了区别同一个标签的不同意思 -->
+    <!-- xmlns:前缀 -->
+    <!-- android 别名 -->
+    <!-- http://schemas.android.com/apk/res/android 地址 -->
+    
+    <!-- versionCode版本编号 -->
+    <!-- versionName版本名字 -->
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <!-- activity标签表示配置的页面 每当有一个新的页面产生并且需要显示的时候就必须在application标签内部进行配置 -->
+        <!-- android:name 配置的页面的名字 一般来说是包括了包名和类名的，如果只有一个类名则模式是package属性值+类名 -->
+        <!-- com.zyh.android.helloworld2222.MainActivity -->
+        <activity
+            android:name="com.zyh.android.helloworld.MainActivity"
+            android:label="@string/app_name" >
+            <!-- 这一对放在哪一个Activity下面就表示此Activity做为启动页面 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.zyh.android.helloworld.TwoActivity"
+            android:label="第二个页面" >
+            <!-- 这一对放在哪一个Activity下面就表示此Activity做为启动页面 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

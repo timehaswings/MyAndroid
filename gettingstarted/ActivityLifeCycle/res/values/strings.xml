@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ActivityLifeCycle</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Jump">跳转</string>
+    <string name="TwotITLE">第二个页面</string>
+    <string name="DefaultVlaue">默认的内容</string>
+
+</resources>

@@ -1,0 +1,32 @@
+一、android应用程序是怎么运行的?
+   1、在android应用程序启动的时候，会先加载AndroidManifest.xml(部署描述文件)文件
+      从此文件中读取到需要启用的Activity(java类)，并调用它的onCreate方法。
+      
+      AndroidManifest.xml文件中的配置信息: 
+        <activity
+            android:name="com.example.helloworld.MainActivity"
+   
+   2、在onCreate方法中，调用setContentView显示View。
+
+二、目录结构
+   src
+      存储java源程序(开发android过程中的java源程序存储在此目录中)，
+   gen
+      此目录中有一个R.java文件，用于描述android的资源信息。
+
+       资源(文件，图片，文字....)
+   values
+       此目录下的文件用于描述: 字符串、尺寸、颜色、图片等资源。
+   layout
+       此目录中的文件用于描述布局资源(布局是指页面应该如何显示)
+
+
+
+  
+
+
+
+
+
+
+

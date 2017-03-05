@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- 3(rgb),4(argb) 6(rrggbb),8(aarrggbb) -->
+    <color name="blue">#00f</color>
+</resources>

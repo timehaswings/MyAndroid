@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dip"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/holo_blue_light"
+    >
+    
+    <!-- dp = dip px sp(文本单位)-->
+    <!-- dp带有密度的像素 密度==1 dp = px dp = px * 密度-->
+    
+    <!-- LinearLayout 线性布局 方向：水平horizontal(默认值) 垂直 -->
+    <!-- android:orientation="" -->
+    <!-- RelativeLayout 页面布局其中一种 -->
+    
+    <!-- layout_width  match_parent wrap_content 大小和内容大小一致-->
+    <!-- TextView 文本视图 -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+
+</LinearLayout>

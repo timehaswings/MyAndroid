@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zyh.android.intentdemo01"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <!-- 读取SDCard的权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 写入SDCard的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ImgActivity"
+            android:label="@string/title_activity_img" >
+            <intent-filter>
+                <!-- action 表示此页面接收Action的值 -->
+                <!-- <action android:name="com.test.showimg"/> -->
+                <action android:name="android.intent.action.VIEW" />
+                <!-- category 种类 -->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- data 表示接收的数据的类型和前缀 -->
+                <data android:mimeType="image/*" android:scheme="file"/>
+                
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

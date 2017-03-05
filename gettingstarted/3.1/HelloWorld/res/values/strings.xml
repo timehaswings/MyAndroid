@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HelloWorld</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="test2">我在这里测试一下字符串资源</string>
+    <string name="description">这张图片是腾讯的logo</string>
+    <string name="bu01">点击测试</string>
+    <color name="red">#f00</color>
+    <color name="blue">#0000ff</color>
+    <color name="green">#f0f0</color>
+    
+</resources>
